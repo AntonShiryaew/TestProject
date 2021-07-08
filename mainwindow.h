@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "ceratestringclass.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,6 +15,13 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+private slots:
+    void on_btnBackToMenu_clicked();
+
+private:
+    CerateStringClass *numbers;
+    CerateStringClass *symbol;
 
 private:
     Ui::MainWindow *ui;
