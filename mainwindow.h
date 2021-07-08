@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "ceratestringclass.h"
+#include "generationmethodsclass.h"
+#include "generationstringclass.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,8 +21,9 @@ private slots:
     void on_btnBackToMenu_clicked();
 
 private:
-    CerateStringClass *numbers;
-    CerateStringClass *symbol;
+    GenerationMethodsClass *number;
+    GenerationMethodsClass *symbol;
+    GenerationStringClass *mainStringOnWindow;
 
 private:
     Ui::MainWindow *ui;

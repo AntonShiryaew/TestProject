@@ -9,12 +9,14 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    ceratestringclass.cpp \
+    generationmethodsclass.cpp \
+    generationstringclass.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
-    ceratestringclass.h \
+    generationmethodsclass.h \
+    generationstringclass.h \
     mainwindow.h
 
 FORMS += \
