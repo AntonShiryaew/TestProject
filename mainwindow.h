@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "generationmethodsclass.h"
+#include "generator.h"
 #include "generationstringclass.h"
 
 QT_BEGIN_NAMESPACE
@@ -18,12 +18,13 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_btnBackToMenu_clicked();
+    void onGenerationEquation();
+
+    void onCheckAnswer();
 
 private:
-    GenerationMethodsClass *number;
-    GenerationMethodsClass *symbol;
     GenerationStringClass *mainStringOnWindow;
+    QStringList resultStringList;
 
 private:
     Ui::MainWindow *ui;

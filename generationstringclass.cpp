@@ -1,21 +1,31 @@
 #include "generationstringclass.h"
 
-#include <generationmethodsclass.h>
+#include <generator.h>
 
 GenerationStringClass::GenerationStringClass()
 {
 
 }
-QStringList GenerationStringClass::onGenerateString()
+QStringList GenerationStringClass::onGenerateString(const int countNumbers)
 {
-    GenerationMethodsClass *number = new GenerationMethodsClass();
-    GenerationMethodsClass *symbol = new GenerationMethodsClass();
-    int firstNumberFromMethod = number->onGenerateNumbersForString();
-    int secondNumberFromMethod = number->onGenerateNumbersForString();
-    QString symbolFromMethod = symbol->onGenerateSymbolForString();
-
-    QStringList mainString;
-    mainString.append(QString::number(firstNumberFromMethod) + " " + symbolFromMethod + " " + QString::number(secondNumberFromMethod) + " = ? ");
-
-    return mainString;
+    Generator *generationMethods = new Generator();
+    QStringList mainStringList;
+    mainStringList.append(QString::number(generationMethods->onGenerateNumbersForString()));
+    for(int i = 1; i < countNumbers; i++){
+        QString symbol = generationMethods->onGenerateSymbolForString();
+        int number = generationMethods->onGenerateNumbersForString();
+        if(symbol == "/")
+        {
+            while (number == 0)
+                number = generationMethods->onGenerateNumbersForString();
+            mainStringList.append(symbol);
+            mainStringList.append(QString::number(number));
+        }
+        else
+        {
+            mainStringList.append(symbol);
+            mainStringList.append(QString::number(number));
+        }
+    }
+    return mainStringList;
 }

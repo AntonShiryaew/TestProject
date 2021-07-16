@@ -7,7 +7,7 @@ class GenerationStringClass
 {
 public:
     GenerationStringClass();
-    QStringList onGenerateString();
+    QStringList onGenerateString(const int countNumbers);
 };
 
 #endif // GENERATIONSTRINGCLASS_H

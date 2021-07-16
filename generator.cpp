@@ -1,16 +1,16 @@
-#include "generationmethodsclass.h"
+#include "generator.h"
 #include "QRandomGenerator"
 
-GenerationMethodsClass::GenerationMethodsClass()
+Generator::Generator()
 {
 
 }
-int GenerationMethodsClass::onGenerateNumbersForString()
+int Generator::onGenerateNumbersForString()
 {
     QRandomGenerator *randomForNumbers = QRandomGenerator::global();
-    return randomForNumbers->bounded(-100,100);
+    return randomForNumbers->bounded(-10,10);
 }
-QString GenerationMethodsClass::onGenerateSymbolForString()
+QString Generator::onGenerateSymbolForString()
 {
     QRandomGenerator *randomForSymbol = QRandomGenerator::global();
     QVector<QString> symbol = {"+","-","*","/"};
